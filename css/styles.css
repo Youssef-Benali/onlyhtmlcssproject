@@ -11,7 +11,7 @@
 
 *,
 *::after,
-::before {
+*::before {
     box-sizing: border-box;
 }
 
@@ -204,18 +204,24 @@ a {
 /* Buttons */
 
 .btn {
-    border-radius : 30px;
-    border-radius : 60px;
+    border-radius : 40px;
     border        : 0;
-    border        : none;
     cursor        : pointer;
     font-size     : 1.8rem;
     font-weight   : 600;
     margin        : 1rem 0;
+    outline       : 0;
     padding       : 2rem 3rem;
     text-align    : center;
     text-transform: uppercase;
     white-space   : nowrap;
+}
+
+.btn .icon {
+    width         : 2rem;
+    height        : 2rem;
+    margin-right  : 1rem;
+    vertical-align: middle;
 }
 
 .btn--primary {
@@ -233,7 +239,7 @@ a {
 }
 
 .btn--secondary:hover {
-    background: #00c8eb;
+    background: #05cdf0;
 }
 
 .btn--accent {
@@ -245,18 +251,8 @@ a {
     background: #ec3000;
 }
 
-.btn--block {
-    width  : 100%;
-    display: inline-block;
-}
-
-.btn--stretched {
-    padding-left : 6rem;
-    padding-right: 6rem;
-}
-
 .btn--outline {
-    background: white;
+    background: #fff;
     color     : var(--color-headings);
     border    : 2px solid var(--color-headings);
 }
@@ -266,14 +262,23 @@ a {
     color     : #fff;
 }
 
+.btn--stretched {
+    padding-left : 6rem;
+    padding-right: 6rem;
+}
+
+.btn--block {
+    width  : 100%;
+    display: inline-block;
+}
+
 @media screen and (min-width: 1024px) {
     .btn {
         font-size: 1.5rem;
     }
 }
 
-/*  Inputs */
-
+/* Inputs */
 .input {
     border-radius: var(--border-radius);
     border       : 1px solid var(--color-border);
@@ -296,7 +301,7 @@ a {
 .input-group .input {
     border   : 0;
     flex-grow: 1;
-    padding  : 1.5rem 1rem;
+    padding  : 1.5rem 2rem;
 }
 
 .input-group .btn {
@@ -310,7 +315,6 @@ a {
 }
 
 /* Cards */
-
 .card {
     border-radius: 7px;
     box-shadow   : 0 0 20px 10px #f3f3f3;
@@ -325,12 +329,12 @@ a {
 
 .card--primary .card__header {
     background: var(--color-primary);
-    color     : white;
+    color     : #fff;
 }
 
 .card--secondary .card__header {
     background: var(--color-secondary);
-    color     : white;
+    color     : #fff;
 }
 
 .card--secondary .badge--secondary {
@@ -338,9 +342,8 @@ a {
 }
 
 /* Plans */
-
 .plan__name {
-    color      : white;
+    color      : #fff;
     margin     : 0;
     font-weight: 500;
     font-size  : 2.4rem;
@@ -358,19 +361,14 @@ a {
 }
 
 .plan__description {
-    display       : block;
     font-size     : 2rem;
     font-weight   : 300;
     letter-spacing: 1px;
+    display       : block;
 }
 
 .plan .list__item {
-    margin-bottom : 2rem;
-    letter-spacing: 0.8px;
-}
-
-.plan--popular {
-    z-index: 0;
+    margin-bottom: 2rem;
 }
 
 .plan--popular .card__header {
@@ -384,7 +382,6 @@ a {
     position: absolute;
     top     : -6px;
     right   : 5%;
-    z-index : 1;
 }
 
 @media screen and (min-width: 1024px) {
@@ -406,7 +403,6 @@ a {
 }
 
 /* Media */
-
 .media {
     display: flex;
 }
@@ -424,7 +420,6 @@ a {
 }
 
 /* Quotes */
-
 .quote {
     font-size  : 3rem;
     font-style : italic;
@@ -441,11 +436,10 @@ a {
 }
 
 .quote__author {
-    margin-bottom : 0;
-    font-weight   : 500;
-    font-size     : 3rem;
-    font-style    : normal;
-    letter-spacing: 00.8px;
+    font-size    : 3rem;
+    font-style   : normal;
+    font-weight  : 500;
+    margin-bottom: 0;
 }
 
 .quote__company {
@@ -475,7 +469,6 @@ a {
 }
 
 /* Grids */
-
 .grid {
     display: grid;
 }
@@ -734,5 +727,30 @@ a {
     .hero__content {
         text-align: left;
         align-self: center;
+    }
+}
+
+/* Domain Block */
+.block-domain .input-group {
+    border    : 0;
+    box-shadow: 0 0 30px 20px #e6ebee;
+    margin    : 4rem auto;
+    max-width : 670px;
+}
+
+.block-domain__prices {
+    display              : grid;
+    font-size            : 2rem;
+    font-weight          : 600;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows   : repeat(2, 6rem);
+    justify-items        : center;
+    margin               : 0 auto;
+    max-width            : 700px;
+}
+
+@media screen and (min-width: 768px) {
+    .block-domain__prices {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
 }

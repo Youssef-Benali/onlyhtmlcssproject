@@ -109,7 +109,7 @@ a {
     border-radius: 20px;
     font-size    : 2rem;
     font-weight  : 600;
-    padding      : 0.5rem 2rem;
+    padding      : 1rem 2rem;
     white-space  : nowrap;
 }
 
@@ -131,7 +131,7 @@ a {
 
 @media screen and (min-width: 1024px) {
     .badge {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .badge--small {
@@ -251,6 +251,15 @@ a {
     background: #ec3000;
 }
 
+.btn--card-color {
+    background: #1b0760;
+    color     : #fff;
+}
+
+.btn--card-color:hover {
+    opacity: 0.8;
+}
+
 .btn--outline {
     background: #fff;
     color     : var(--color-headings);
@@ -319,6 +328,8 @@ a {
     border-radius: 7px;
     box-shadow   : 0 0 20px 10px #f3f3f3;
     overflow     : hidden;
+    margin       : 0;
+    min-width    : 350px;
     /*Overflow   : To prevent border-radius to disapear*/
 }
 
@@ -337,11 +348,21 @@ a {
     color     : #fff;
 }
 
+.card--primary .badge--primary {
+    background: #126de4;
+}
+
 .card--secondary .badge--secondary {
     background: #02cdf1;
 }
 
+
+
 /* Plans */
+.plan {
+    transition: transform 0.5s ease-out;
+}
+
 .plan__name {
     color      : #fff;
     margin     : 0;
@@ -371,6 +392,10 @@ a {
     margin-bottom: 2rem;
 }
 
+.plan--popular {
+    transform: scale(1.1);
+}
+
 .plan--popular .card__header {
     position: relative;
 }
@@ -383,6 +408,16 @@ a {
     top     : -6px;
     right   : 5%;
 }
+
+.plan:hover {
+    transform: scale(1.05);
+}
+
+.plan--popular:hover {
+    transform: scale(1.15);
+}
+
+
 
 @media screen and (min-width: 1024px) {
     .plan__name {
@@ -753,4 +788,15 @@ a {
     .block-domain__prices {
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
+}
+
+/* Plans block */
+
+.block-plans .grid {
+    gap: 8rem 4rem;
+}
+
+.block-plans .card {
+    max-width: 500px;
+    margin   : 0 auto;
 }

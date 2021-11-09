@@ -660,9 +660,20 @@ a {
     color     : #7b858b;
 }
 
+.block--softdark{
+    background: #232323;
+    color: white;
+}
+
 .block--dark h1,
 .block--dark h2,
 .block--dark h3 {
+    color: white;
+}
+
+.block--softdark h1,
+.block--softdark h2,
+.block--softdark h3 {
     color: white;
 }
 
@@ -851,4 +862,10 @@ a {
         width: auto;
         max-width: 700px;
     }
+}
+
+/* Footer */
+
+.footer{
+    background: #232323;
 }

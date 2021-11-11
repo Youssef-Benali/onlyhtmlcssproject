@@ -16,9 +16,9 @@
 }
 
 /* Typography */
-::selection{
+::selection {
     background: var(--color-primary);
-    color: #fff;
+    color     : #fff;
 }
 
 
@@ -52,7 +52,7 @@ h2 {
 }
 
 h3 {
-    font-size: 3rem;
+    font-size  : 3rem;
     font-weight: 300;
 }
 
@@ -159,7 +159,7 @@ a {
 .list--tick {
     list-style-image: url(../img/tick.svg);
     padding-left    : 3rem;
-    color       : var(--color-headings);
+    color           : var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -445,7 +445,7 @@ a {
 
 /* Media */
 .media {
-    display: flex;
+    display      : flex;
     margin-bottom: 4rem;
 }
 
@@ -647,7 +647,7 @@ a {
 }
 
 .block__header {
-    text-align: center;
+    text-align   : center;
     margin-bottom: 4rem;
 }
 
@@ -660,9 +660,9 @@ a {
     color     : #7b858b;
 }
 
-.block--softdark{
+.block--softdark {
     background: #232323;
-    color: white;
+    color     : white;
 }
 
 .block--dark h1,
@@ -845,11 +845,11 @@ a {
 
 /* Showcase */
 
-.block-showcase__image > img{
+.block-showcase__image>img {
     width: 100%;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .block-showcase .grid {
         grid-template-columns: 50% 50%;
     }
@@ -858,14 +858,87 @@ a {
         justify-self: end;
     }
 
-    .block-showcase__image > img {
-        width: auto;
+    .block-showcase__image>img {
+        width    : auto;
         max-width: 700px;
     }
 }
 
 /* Footer */
 
-.footer{
+.footer {
     background: #232323;
+}
+
+.footer__section {
+    padding      : 2rem;
+    border-bottom: 1px solid #393939;
+}
+
+.footer__heading {
+    text-transform: uppercase;
+    font-weight   : 600;
+}
+
+.footer__brand {
+    padding   : 5rem;
+    text-align: center;
+}
+
+.footer__brand img {
+    /* TODO: Refactor, apply this to all images */
+    width: 100%;
+    max-width: 230px;
+}
+
+.footer__copyright {
+    font-size: 2.1rem;
+    color    : #fff;
+    opacity  : 0.3;
+}
+
+.footer a {
+    color     : #777;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer__section .list {
+    margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__sections {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+
+    .footer .collapsible__chevron {
+        display: none;
+    }
+
+    .footer .collapsible__content {
+        opacity  : 1;
+        max-width: 100%;
+    }
+
+    .footer__brand {
+        order      : -1;
+        margin-top : 1rem;
+        padding-top: 1rem;
+    }
+
+    .footer__copyright {
+        font-size: 1.5rem;
+    }
+
+    .footer__section {
+        border: none;
+    }
+
+    .footer__heading {
+        font-size: 1.6rem;
+    }
 }

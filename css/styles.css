@@ -217,7 +217,7 @@ a {
     font-weight   : 600;
     margin        : 1rem 0;
     outline       : 0;
-    padding       : 2rem 3rem;
+    padding       : 2rem 4vw;
     text-align    : center;
     text-transform: uppercase;
     white-space   : nowrap;
@@ -317,6 +317,7 @@ a {
     border   : 0;
     flex-grow: 1;
     padding  : 1.5rem 2rem;
+    width    : 0;
 }
 
 .input-group .btn {
@@ -331,12 +332,12 @@ a {
 
 /* Cards */
 .card {
-    border-radius: 7px;
-    box-shadow   : 0 0 20px 10px #f3f3f3;
-    overflow     : hidden;
-    margin       : 0;
-    min-width    : 350px;
-    /*Overflow   : To prevent border-radius to disapear*/
+    border-radius   : 7px;
+    box-shadow      : 0 0 20px 10px #f3f3f3;
+    overflow        : hidden;
+    margin          : 0;
+    /* min-width    : 350px; */
+    /*Overflow      : To prevent border-radius to disapear*/
 }
 
 .card__header,
@@ -463,10 +464,15 @@ a {
 
 /* Quotes */
 .quote {
-    font-size  : 3rem;
+    font-size  : 2rem;
     font-style : italic;
     color      : var(--color-body-darker);
     line-height: 1.3;
+    margin : 5rem 0 0 0;
+}
+
+.quote__text {
+    line-height: 1.75;
 }
 
 .quote__text::before {
@@ -551,6 +557,9 @@ a {
 
 
 @media screen and (min-width: 768px) {
+    .testimonial {
+        min-width: 300px;
+    }
 
     .testimonial .quote,
     .testimonial .quote__author {
@@ -562,6 +571,8 @@ a {
     }
 
 }
+
+@media screen and (max-width: 500px) {}
 
 /* Callouts */
 
@@ -639,6 +650,13 @@ a {
     opacity   : 1;
 }
 
+@media screen and (min-width: 768px) {
+    .collapsible__content {
+        max-height: 100vh;
+        opacity   : 1;
+    }
+}
+
 /* Blocks */
 
 .block {
@@ -699,7 +717,7 @@ a {
     display        : flex;
     justify-content: space-between;
     flex-wrap      : wrap;
-    padding        : 0 1rem;
+    padding        : 0 5rem;
     align-items    : center;
 }
 
@@ -791,10 +809,11 @@ a {
 }
 
 .block-domain__prices {
+    color                : var(--color-headings);
     display              : grid;
     font-size            : 2rem;
     font-weight          : 600;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows   : repeat(2, 6rem);
     justify-items        : center;
     margin               : 0 auto;
@@ -808,6 +827,10 @@ a {
 }
 
 /* Plans block */
+
+.block-plans {
+    overflow: hidden;
+}
 
 .block-plans .grid {
     gap: 8rem 4rem;
@@ -856,6 +879,7 @@ a {
 
     .block-showcase__image {
         justify-self: end;
+        margin-right: 4rem;
     }
 
     .block-showcase__image>img {
@@ -887,7 +911,7 @@ a {
 
 .footer__brand img {
     /* TODO: Refactor, apply this to all images */
-    width: 100%;
+    width    : 100%;
     max-width: 230px;
 }
 
@@ -908,6 +932,10 @@ a {
 
 .footer__section .list {
     margin: 0;
+}
+
+.collapsible__content .list li {
+    margin: 1.5rem 0;
 }
 
 @media screen and (min-width: 768px) {
